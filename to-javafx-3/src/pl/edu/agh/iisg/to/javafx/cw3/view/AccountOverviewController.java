@@ -12,8 +12,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import pl.edu.agh.iisg.to.javafx.cw3.command.Command;
-import pl.edu.agh.iisg.to.javafx.cw3.command.CommandRegistry;
+import pl.edu.agh.iisg.to.javafx.cw3.command.*;
 import pl.edu.agh.iisg.to.javafx.cw3.model.Account;
 import pl.edu.agh.iisg.to.javafx.cw3.model.Category;
 import pl.edu.agh.iisg.to.javafx.cw3.model.Transaction;
@@ -114,7 +113,8 @@ public class AccountOverviewController {
 		Transaction transaction = Transaction.newTransaction();
 
 		if (presenter.showTransactionEditDialog(transaction)) {
-			data.addTransaction(transaction);
+			AddTransactionCommand addTransactionCommand = new AddTransactionCommand(transaction, data);
+			commandRegistry.executeCommand(addTransactionCommand);
 		}
 	}
 
