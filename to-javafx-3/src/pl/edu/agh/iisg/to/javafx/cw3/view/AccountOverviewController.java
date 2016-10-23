@@ -2,8 +2,10 @@ package pl.edu.agh.iisg.to.javafx.cw3.view;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.*;
 
 import javafx.beans.binding.Bindings;
+import javafx.collections.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -93,11 +95,11 @@ public class AccountOverviewController {
 
 	@FXML
 	private void handleDeleteAction(ActionEvent event) {
-		for (Transaction transaction : transactionsTable.getSelectionModel()
-				.getSelectedItems()) {
-			data.removeTransaction(transaction);
-		}
-	}
+        List<Transaction> toRemove = transactionsTable.getSelectionModel().getSelectedItems();
+        System.out.println(toRemove);
+        RemoveTransactionsCommand removeTransactionsCommand = new RemoveTransactionsCommand(toRemove, data);
+        commandRegistry.executeCommand(removeTransactionsCommand);
+    }
 
 	@FXML
 	private void handleEditAction(ActionEvent event) {

@@ -83,7 +83,8 @@ public class Transaction {
 
 	@Override
 	public String toString() {
-		return String.join(",", date.get().toString(), payee.get(), category.get().getName(), inflow.get().toString());
+		//return String.join(",", date.get().toString(), payee.get(), category.get().getName(), inflow.get().toString());
+		return payee.get() + " " + inflow.get().toString() + "$";
 	}
 
 }
