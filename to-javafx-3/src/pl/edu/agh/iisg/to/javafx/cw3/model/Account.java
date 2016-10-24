@@ -14,14 +14,12 @@ public class Account {
 
 	private StringProperty name;
 	
-	private ObjectProperty<BigDecimal> balance;
+	private ObjectProperty<BigDecimal> balance = new SimpleObjectProperty<>(BigDecimal.ZERO);
 	
-	private ObservableList<Transaction> transactions;
+	private ObservableList<Transaction> transactions = FXCollections.observableArrayList();
 
 	public Account(String name) {
 		this.name = new SimpleStringProperty(name);
-		this.balance = new SimpleObjectProperty<BigDecimal>(BigDecimal.ZERO);
-		this.transactions = FXCollections.observableArrayList();
 	}
 
 	public final String getName() {

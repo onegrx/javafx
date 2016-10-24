@@ -58,7 +58,7 @@ public class AccountPresenter {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(Main.class
 					.getResource("view/TransactionEditDialog.fxml"));
-			BorderPane page = (BorderPane) loader.load();
+			BorderPane page = loader.load();
 
 			// Create the dialog Stage.
 			Stage dialogStage = new Stage();

@@ -24,13 +24,7 @@ public class RemoveTransactionsCommand implements Command {
 
     @Override
     public void execute() {
-        System.out.println("Number of transactions to remove: " + transactionsToRemove.size());
-        for(Transaction t: transactionsToRemove) {
-            System.out.println(t);
-            account.removeTransaction(t);
-        }
-
-
+        transactionsToRemove.forEach(account::removeTransaction);
     }
 
     @Override

@@ -96,7 +96,6 @@ public class AccountOverviewController {
 	@FXML
 	private void handleDeleteAction(ActionEvent event) {
         List<Transaction> toRemove = transactionsTable.getSelectionModel().getSelectedItems();
-        System.out.println(toRemove);
         RemoveTransactionsCommand removeTransactionsCommand = new RemoveTransactionsCommand(toRemove, data);
         commandRegistry.executeCommand(removeTransactionsCommand);
     }
@@ -146,7 +145,7 @@ public class AccountOverviewController {
 			protected void updateItem(Command item, boolean empty) {
 				super.updateItem(item, empty);
 				setText((item != null && !empty) ? item.getName() : null);
-			};
+			}
 		});
 	}
 }
