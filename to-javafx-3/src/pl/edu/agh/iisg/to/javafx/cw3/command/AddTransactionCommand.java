@@ -22,12 +22,12 @@ public class AddTransactionCommand implements Command {
 
     @Override
     public void undo() {
-
+        account.removeTransaction(transactionToAdd);
     }
 
     @Override
     public void redo() {
-
+        execute();
     }
 
     @Override

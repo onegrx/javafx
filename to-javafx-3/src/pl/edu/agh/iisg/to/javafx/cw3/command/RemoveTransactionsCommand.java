@@ -29,12 +29,12 @@ public class RemoveTransactionsCommand implements Command {
 
     @Override
     public void undo() {
-
+        transactionsToRemove.forEach(account::addTransaction);
     }
 
     @Override
     public void redo() {
-
+        execute();
     }
 
     @Override
