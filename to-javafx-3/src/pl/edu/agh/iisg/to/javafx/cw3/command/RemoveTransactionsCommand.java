@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class RemoveTransactionsCommand implements Command {
 
-    private final List<Transaction> transactionsToRemove;
+    private final List<Transaction> transactionsToRemove = new ArrayList<>();
     private final Account account;
     private final StringBuilder removedTransactions = new StringBuilder();
 
@@ -18,7 +18,7 @@ public class RemoveTransactionsCommand implements Command {
             removedTransactions.append(transaction);
             removedTransactions.append("; ");
         });
-        this.transactionsToRemove = transactionsToRemove;
+        this.transactionsToRemove.addAll(transactionsToRemove);
         this.account = account;
     }
 
