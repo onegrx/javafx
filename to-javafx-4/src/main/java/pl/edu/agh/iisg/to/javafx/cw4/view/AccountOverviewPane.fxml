@@ -43,10 +43,10 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" text="Load data" >
-            	<VBox.margin>
-            		<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-            	</VBox.margin>
+             <Button fx:id="loadDataButton" alignment="TOP_CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleLoadData" text="Load data">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
             </Button>
             <ProgressBar fx:id="progressBar"  maxWidth="1.7976931348623157E308" >
             <VBox.margin>
